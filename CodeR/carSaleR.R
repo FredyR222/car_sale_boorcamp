@@ -7,6 +7,22 @@ library(dplyr)
 
 
 options(scipen = 999) 
+#****************
+#* Proyecto de Predicción de Ventas de Vehículos con lenguaje R
+#* Se seleccionó un conjunto de datos "kaggle" el cual contiene información de la venta de vehículos, contando con columnas como:
+#*  Data - fecha de la venta
+#*  Price - precio del vehículo
+#*  Model, Company - Modelo y Marca de Vehículo
+#* Y como datos del comprador los valores en las columnas:
+#*  Annual_Income - Ingresos Anuales
+#*  Gender - Género
+#*
+#* El conjunto de Datos tiene una tendencia muy marcada en el mercado de las cuales se repiten en ambos géneros
+#* las preferencias por las categorías SUV y Hatchback, causa a su vez que se tenga un promedio en precio de vehículos comprados
+#* bastante similar.
+#* Procurando disminuir el sesgo de los datos a los valores de salario y precio fueron convertidos a logaritmo natural.
+#* Aún se deben hacer mejoras en la solución predictiva para que tenga en cuenta otros valores como la región del Dealer e incluso el mes de la compra
+
 
 df<-read.csv('colocar ruta', header = TRUE, fill = TRUE, stringsAsFactors = FALSE)
 
@@ -306,5 +322,3 @@ ggplot() +
   geom_text(data = promedio_fem, aes(x = Body_Style, y = percentage, label = scales::percent(percentage)), vjust = -0.5, color = "pink") +
   geom_text(data = promedio_mas, aes(x = Body_Style, y = percentage, label = scales::percent(percentage)), vjust = -0.5, color = "blue")
 
-
-#/*********Analisis *****//
